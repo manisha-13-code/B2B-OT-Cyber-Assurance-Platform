@@ -31,7 +31,7 @@ const menu = [
   },
 
   { icon: ShieldCheck, label: "Compliance Center", href: "/dashboard#compliance" },
-  { icon: FolderOpen, label: "Evidence Repository", href: "/evidence" },
+  { icon: FolderOpen, label: "Evidence Repository", href: "/evidence-repository" },
   { icon: ClipboardCheck, label: "Controls Workspace", href: "/controls" },
   { icon: CheckCircle2, label: "Validation Center", href: "/validation" },
   { icon: Network, label: "Architecture Assurance", href: "/architecture" },

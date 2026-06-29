@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: "default" | "secondary";
+  variant?: "default" | "secondary" | "outline";
   className?: string;
 }
 
@@ -14,6 +14,8 @@ export function Badge({
   const variantStyles =
     variant === "secondary"
       ? "bg-slate-100 text-slate-800"
+      : variant === "outline"
+      ? "border border-slate-200 bg-white text-slate-900"
       : "bg-slate-950 text-white";
 
   return (
