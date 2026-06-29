@@ -1,6 +1,13 @@
 import DashboardCard from "./DashboardCard";
 
 export default function DashboardCards() {
+  const scrollToCompliance = () => {
+    const target = document.getElementById("compliance");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-5">
       <DashboardCard
@@ -16,6 +23,7 @@ export default function DashboardCards() {
         status="Adequate"
         subtitle="5 of 5 frameworks"
         trend="+1"
+        onClick={scrollToCompliance}
       />
       <DashboardCard
         title="Validation Coverage"

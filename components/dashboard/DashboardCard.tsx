@@ -5,6 +5,7 @@ interface DashboardCardProps {
   subtitle: string;
   trend?: string;
   danger?: boolean;
+  onClick?: () => void;
 }
 
 export default function DashboardCard({
@@ -14,12 +15,23 @@ export default function DashboardCard({
   subtitle,
   trend,
   danger = false,
+  onClick,
 }: DashboardCardProps) {
   return (
     <div
+      role={onClick ? "button" : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onClick={onClick}
+      onKeyDown={(event) => {
+        if (!onClick) return;
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onClick();
+        }
+      }}
       className={`rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
         danger ? "border-red-200 bg-red-50" : "border-slate-200"
-      }`}
+      } ${onClick ? "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400" : ""}`}
     >
       <p className={`text-sm font-semibold ${danger ? "text-red-600" : "text-slate-700"}`}>
         {title}
