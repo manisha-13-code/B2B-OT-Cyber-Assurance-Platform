@@ -66,32 +66,33 @@ export default function EvidenceRepositoryPage() {
   }, [filteredData, tabValue]);
 
   return (
-    <DashboardLayout>
+    <DashboardLayout
+      title="Evidence Repository"
+      subtitle="Evidence registry — versioned, scoped, mapped to Control Instances"
+    >
+      <Header />
+
       <div className="space-y-6">
-        <Header />
+        <SearchFilter
+          search={search}
+          setSearch={setSearch}
+          framework={framework}
+          setFramework={setFramework}
+          approval={approval}
+          setApproval={setApproval}
+          onReset={() => {
+            setSearch("");
+            setFramework("all");
+            setApproval("all");
+          }}
+        />
 
-        <div className="space-y-6">
-          <SearchFilter
-            search={search}
-            setSearch={setSearch}
-            framework={framework}
-            setFramework={setFramework}
-            approval={approval}
-            setApproval={setApproval}
-            onReset={() => {
-              setSearch("");
-              setFramework("all");
-              setApproval("all");
-            }}
-          />
+        <EvidenceTabs
+          value={tabValue}
+          onValueChange={setTabValue}
+        />
 
-          <EvidenceTabs
-            value={tabValue}
-            onValueChange={setTabValue}
-          />
-
-          <EvidenceTable data={visibleEvidence} />
-        </div>
+        <EvidenceTable data={visibleEvidence} />
       </div>
     </DashboardLayout>
   );

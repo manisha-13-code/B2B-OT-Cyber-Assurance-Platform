@@ -5,7 +5,10 @@ import RiskTable from "@/components/risk/RiskTable";
 
 export default function RiskCommandCenterPage() {
   return (
-    <DashboardLayout>
+    <DashboardLayout
+      title="Risk Command Center"
+      subtitle="Consolidated platform-generated findings across all monitored plants. Prioritize and track remediation activities."
+    >
       <RiskHeader />
       <RiskToolbar />
       <RiskTable />

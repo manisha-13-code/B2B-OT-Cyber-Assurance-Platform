@@ -1,3 +1,5 @@
+"use client";
+
 import DashboardCard from "./DashboardCard";
 
 export default function DashboardCards() {

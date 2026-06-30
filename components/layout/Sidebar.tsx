@@ -30,7 +30,7 @@ const menu = [
     href: "/risk-command-center",
   },
 
-  { icon: ShieldCheck, label: "Compliance Center", href: "/dashboard#compliance" },
+  { icon: ShieldCheck, label: "Compliance Center", href: "/compliance" },
   { icon: FolderOpen, label: "Evidence Repository", href: "/evidence-repository" },
   { icon: ClipboardCheck, label: "Controls Workspace", href: "/controls" },
   { icon: CheckCircle2, label: "Validation Center", href: "/validation" },

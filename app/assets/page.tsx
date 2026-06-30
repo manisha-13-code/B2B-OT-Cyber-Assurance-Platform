@@ -5,7 +5,10 @@ import AssetTable from "@/components/assets/AssetTable";
 
 export default function AssetsPage() {
   return (
-    <DashboardLayout>
+    <DashboardLayout
+      title="Assets"
+      subtitle="OT asset registry across all monitored plants"
+    >
       <AssetsHeader />
       <AssetToolbar />
       <AssetTable />
